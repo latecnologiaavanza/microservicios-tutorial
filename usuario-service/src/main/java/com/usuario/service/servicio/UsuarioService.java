@@ -44,7 +44,7 @@ public class UsuarioService {
 	}
 
 	public List<Carro> getCarros(int usuarioId) {
-		List<Carro> carros = restTemplate.getForObject("http://carro-service/carro/usuario/" + usuarioId, List.class);
+		List<Carro> carros = restTemplate.getForObject("http://carro-service/carro/usuario/"+usuarioId, List.class);
 		return carros;
 	}
 

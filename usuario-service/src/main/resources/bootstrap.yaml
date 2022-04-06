@@ -1,6 +1,6 @@
 spring:
   application:
-    name: usuario-service 
+    name: usuario-service
   cloud:
     config:
       enabled: true

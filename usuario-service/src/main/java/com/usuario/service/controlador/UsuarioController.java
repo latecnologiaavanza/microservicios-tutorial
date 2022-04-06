@@ -51,7 +51,7 @@ public class UsuarioController {
 		return ResponseEntity.ok(nuevoUsuario);
 	}
 
-	@CircuitBreaker(name = "carrosCB", fallbackMethod = "fallBackGetCarros")
+	@CircuitBreaker(name = "carrosCB",fallbackMethod = "fallBackGetCarros")
 	@GetMapping("/carros/{usuarioId}")
 	public ResponseEntity<List<Carro>> getCarros(@PathVariable("usuarioId") int id) {
 		Usuario usuario = usuarioService.getUsuarioById(id);
@@ -115,7 +115,7 @@ public class UsuarioController {
 		return new ResponseEntity("El usuario : " + id + " no tiene dinero para las motos", HttpStatus.OK);
 	}
 
-	private ResponseEntity<List<Carro>> fallBackGetTodos(@PathVariable("usuarioId") int id,
+	private ResponseEntity<Map<String, Object>> fallBackGetTodos(@PathVariable("usuarioId") int id,
 			RuntimeException excepcion) {
 		return new ResponseEntity("El usuario : " + id + " tiene los vehiculos en el taller", HttpStatus.OK);
 	}
