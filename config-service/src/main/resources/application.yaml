@@ -4,7 +4,7 @@ spring:
   cloud:     config:
       server:
         git:
-          default-label: gateway
+          default-label: circuit-breaker
           uri: https://github.com/ChristianRaulRamirez/microservicios-tutorial
           search-paths: config-data
   application:
